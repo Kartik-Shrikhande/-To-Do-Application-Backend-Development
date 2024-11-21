@@ -7,12 +7,12 @@
 To-Do Application Backend
 </p>
 
-
+---
 ## Overview
 
 This is the backend implementation for a To-Do application, designed with robust features like user authentication, profile management, CRUD operations for to-dos, and advanced functionalities like category management, due date reminders, and search. The backend is built using Node.js, Express, and MongoDB, and is deployed on Render.
 
-
+---
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
@@ -23,6 +23,8 @@ This is the backend implementation for a To-Do application, designed with robust
 - [How To Test](#how-to-test)
 - [API Endpoints](#api-endpoints)
 - [License](#license)
+
+  ---
 ## Features
 
 1. User Authentication
@@ -48,7 +50,7 @@ This is the backend implementation for a To-Do application, designed with robust
 - Input validation for users and to-dos.
 - Clear and descriptive error messages with appropriate status codes.
 
-
+---
 ## Technology Stack
 - **MongoDB:**  A robust NoSQL database that securely stores and manages application data.
 - **Express.js:** Provide fast and flexible web application framework powering the server-side functionality.
@@ -56,7 +58,7 @@ This is the backend implementation for a To-Do application, designed with robust
 - **bcrypt:** A reliable library for encrypting passwords, enhancing user data security.
 - **jsonwebtoken:** secure method for implementing authentication and authorization mechanisms.
 
-
+---
 
 ## Project Setup
 Prerequisites
@@ -72,7 +74,7 @@ Ensure you have the following installed:
   SECRET_KEY=<Your JWT Secret>
   PORT=<Port Number>
   ```
-
+---
 ## Installation
 
 To run Todo App locally, follow these steps:
@@ -105,13 +107,13 @@ To run Todo App locally, follow these steps:
 7. **Access the app:**
    
    Open your web browser and visit `http://localhost:3000` to use todo app.
-
+---
 ## Deployment
 ```
 https://to-do-application-backend-development.onrender.com
 
 ```
-
+---
 ## How to Test
 - Import the Postman collection.
 - Use the following base URL for testing:
@@ -127,6 +129,7 @@ For endpoints requiring authentication:
   Authorization: Bearer <your_token>
 
   ```
+  ---
 ## API Endpoints
 **User Profile API Endpoints :-**
 
@@ -140,7 +143,7 @@ For endpoints requiring authentication:
 | PUT             | `/user/update-profile`     | Updates the profile information of the logged-in user with validated input fields.                      | YES                         |
 | POST            | `/user/logout`             | Logs out the user by invalidating the current JWT token.                                                | YES                         |
 
-
+---
 
 **ToDo's API Endpoints :-**
 
@@ -156,7 +159,7 @@ For endpoints requiring authentication:
 | GET              | `/todo/search/:keyword`  | Searches to-do items based on a keyword found in their title or description.                              | Yes                         |
 
 
-
+---
 
 ## License
 
