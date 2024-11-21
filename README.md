@@ -115,7 +115,10 @@ https://to-do-application-backend-development.onrender.com
 ```
 ---
 ## How to Test
-- Import the Postman collection.
+- Import the Postman collection. Below is the link to import it
+  ```
+  https://api.postman.com/collections/29155114-4e9fc00c-de9c-4956-8a2d-3b255aacf3f8?access_key=PMAT-01JD70EEN62T9JWNGBW6PRAGKM
+  ```
 - Use the following base URL for testing:
   ```
   {{base_url}} = https://to-do-application-backend-development.onrender.com
