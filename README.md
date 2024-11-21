@@ -68,8 +68,8 @@ Ensure you have the following installed:
 - Environment Variables
 
   ```
-  MONGO_URI=<Your MongoDB Connection String>
-  JWT_SECRET=<Your JWT Secret>
+  MONGODB_URL=<Your MongoDB Connection String>
+  SECRET_KEY=<Your JWT Secret>
   PORT=<Port Number>
   ```
 
