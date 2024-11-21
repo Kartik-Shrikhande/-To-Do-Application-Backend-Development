@@ -1,0 +1,1378 @@
+{
+	"info": {
+		"_postman_id": "4e9fc00c-de9c-4956-8a2d-3b255aacf3f8",
+		"name": "To-Do Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29155114"
+	},
+	"item": [
+		{
+			"name": "Users APIs",
+			"item": [
+				{
+					"name": "User - Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Rohit\",\r\n  \"email\": \"Rohit45@email.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/user/signup",
+						"description": "### User Signup\n\nThis endpoint allows users to sign up for the to-do application.\n\n#### Request Body\n\n- `username` (string) - The username of the user.\n    \n- `email` (string) - The email address of the user.\n    \n- `password` (string) - The password for the user account.\n    \n\n#### Response\n\nUpon successful signup, the server returns a status code of 201 and a JSON object with the following structure:\n\n``` json\n{\n    \"message\": \"\",\n    \"user\": {\n        \"username\": \"\",\n        \"email\": \"\",\n        \"password\": \"\",\n        \"isDeleted\": true,\n        \"_id\": \"\",\n        \"createdAt\": \"\",\n        \"updatedAt\": \"\",\n        \"__v\": 0\n    }\n}\n\n ```\n\nThe `message` field may contain additional information, and the `user` object provides details of the newly created user account."
+					},
+					"response": [
+						{
+							"name": "User - Sign Up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"Rohit\",\r\n  \"email\": \"Rohit45@email.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/user/signup"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 04:44:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e05b78b06e5eb-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"135-G71IyfwAU4wE8K5m57LrS2FDt0A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "ffe81774-a6d0-45a7"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"username\": \"Rohit\",\n        \"email\": \"Rohit45@email.com\",\n        \"password\": \"$2b$10$4aGP9eivdQfvUb4frDxsy.N8/.5DJW9DAESjL.lly86pR.s38bw7u\",\n        \"isDeleted\": false,\n        \"_id\": \"673eba931251f465387a5e16\",\n        \"createdAt\": \"2024-11-21T04:44:03.912Z\",\n        \"updatedAt\": \"2024-11-21T04:44:03.912Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Rohit45@email.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/user/login",
+						"description": "### User Login\n\nThis endpoint allows users to log in to the to-do application backend.\n\n#### Request Body\n\n- email (string, required): The email address of the user.\n    \n- password (string, required): The password of the user.\n    \n\n#### Response\n\nThe response is in JSON format with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"token\": {\n            \"type\": \"string\"\n        },\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```\n\n- token (string): The authentication token for the logged-in user.\n    \n- message (string): A message indicating the result of the login attempt."
+					},
+					"response": [
+						{
+							"name": "User - Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Rohit45@email.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/user/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 04:49:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e0e344bcc2432-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-dAgTrzW4dZAYPRfGY8B+C+82qs8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "ee22a6eb-8b12-45e7"
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDU5MSwiZXhwIjoxNzMyMTY4MTkxfQ.YIRdQOs7vsR3GcHuzxB7dKMDaYeeyQ-bxxU4DuVMBBU"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDU5MSwiZXhwIjoxNzMyMTY4MTkxfQ.YIRdQOs7vsR3GcHuzxB7dKMDaYeeyQ-bxxU4DuVMBBU\",\n    \"message\": \"User Login Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User - View Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://to-do-application-backend-development.onrender.com/user/profile",
+						"description": "### Get User Profile\n\nThis endpoint retrieves the user's profile information.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\n- `id` (string): The unique identifier for the user.\n    \n- `username` (string): The username of the user.\n    \n- `email` (string): The email address of the user.\n    \n- `password` (string): The password of the user.\n    \n- `isDeleted` (boolean): Indicates if the user has been deleted.\n    \n- `createdAt` (string): The date and time when the user profile was created.\n    \n- `updatedAt` (string): The date and time when the user profile was last updated.\n    \n- `__v` (integer): Version key.\n    \n- `token` (string): The authentication token associated with the user.\n    \n\n#### Example Response\n\n``` json\n{\n    \"_id\": \"\",\n    \"username\": \"\",\n    \"email\": \"\",\n    \"password\": \"\",\n    \"isDeleted\": true,\n    \"createdAt\": \"\",\n    \"updatedAt\": \"\",\n    \"__v\": 0,\n    \"token\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "User - View Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "https://to-do-application-backend-development.onrender.com/user/profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 04:53:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e1404fd07c5b6-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b9-zxixY6CKDxZko57mFAreiXaclIM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "b5d9e16b-5430-42cc"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"673eba931251f465387a5e16\",\n    \"username\": \"Rohit\",\n    \"email\": \"Rohit45@email.com\",\n    \"password\": \"$2b$10$4aGP9eivdQfvUb4frDxsy.N8/.5DJW9DAESjL.lly86pR.s38bw7u\",\n    \"isDeleted\": false,\n    \"createdAt\": \"2024-11-21T04:44:03.912Z\",\n    \"updatedAt\": \"2024-11-21T04:52:15.718Z\",\n    \"__v\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User - Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Rohit264\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/user/update-profile",
+						"description": "### Update User Profile\n\nThis endpoint is used to update the user's profile information.\n\n#### Request Body\n\n- `username` (string, required): The new username for the user.\n    \n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"message\": \"string\",\n    \"user\": {\n        \"_id\": \"string\",\n        \"username\": \"string\",\n        \"email\": \"string\",\n        \"password\": \"string\",\n        \"isDeleted\": true,\n        \"createdAt\": \"string\",\n        \"updatedAt\": \"string\",\n        \"__v\": 0,\n        \"token\": \"string\"\n    }\n}\n\n ```\n\n- `message` (string): A message regarding the update operation.\n    \n- `user` (object): An object containing the updated user information.\n    \n    - `_id` (string): The unique identifier of the user.\n        \n    - `username` (string): The username of the user.\n        \n    - `email` (string): The email address of the user.\n        \n    - `password` (string): The password of the user.\n        \n    - `isDeleted` (boolean): Indicates if the user is deleted.\n        \n    - `createdAt` (string): The timestamp when the user was created.\n        \n    - `updatedAt` (string): The timestamp when the user was last updated.\n        \n    - `__v` (number): Version key.\n        \n    - `token` (string): The authentication token for the user."
+					},
+					"response": [
+						{
+							"name": "User - Update Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"Rohit264\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/user/update-profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:02:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "394"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e20debc5d8843-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ee-fFNs49EJ9Q8Zxji7BIX6l2QVn28\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "98ea0e3b-2d74-4dec"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile updated successfully\",\n    \"user\": {\n        \"_id\": \"673eba931251f465387a5e16\",\n        \"username\": \"Rohit264\",\n        \"email\": \"Rohit45@email.com\",\n        \"password\": \"$2b$10$4aGP9eivdQfvUb4frDxsy.N8/.5DJW9DAESjL.lly86pR.s38bw7u\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2024-11-21T04:44:03.912Z\",\n        \"updatedAt\": \"2024-11-21T05:02:35.843Z\",\n        \"__v\": 0,\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User - Delete Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://to-do-application-backend-development.onrender.com/user/delete-profile",
+						"description": "# Delete User Profile\n\nThis endpoint is used to delete the user's profile from the to-do application backend.\n\n## Request\n\n- Method: DELETE\n    \n- URL: `https://to-do-application-backend-development.onrender.com/user/delete-profile`\n    \n\n## Response\n\n- Status: 200 OK\n    \n- Content Type: application/json\n    \n\n### Response Body\n\n- `message`: A message indicating the result of the profile deletion.\n    \n\n#### Example\n\n``` json\n{\n    \"message\": \"\"\n}\n\n ```\n\nThis endpoint is used to delete the user profile from the to-do application backend.\n\n#### Request\n\n- Method: DELETE\n    \n- URL: `https://to-do-application-backend-development.onrender.com/user/delete-profile`\n    \n\n#### Response\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n- { \"message\": \"\"}\n    \n\nThe request to this endpoint triggers the deletion of the user's profile. The expected input is the user's authentication credentials or any required parameters for user identification. Upon successful deletion, the response will contain a JSON object with a \"message\" key indicating the success of the operation."
+					},
+					"response": [
+						{
+							"name": "User - Delete Profile",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "https://to-do-application-backend-development.onrender.com/user/delete-profile"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:07:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e277d3966c9a7-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-ZH5dBzyod+zN5KzICzGdJXuzmH4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "95e76bae-d512-4cc7"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User is deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User - Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NDczNSwiZXhwIjoxNzMyMTY4MzM1fQ.BVfb8DTXlce3kGHIh_WUT2j5nqV_kyiUbHwB1F1FuWI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "https://to-do-application-backend-development.onrender.com/user/logout",
+						"description": "### User Logout\n\nThis endpoint is used to log out the user from the to-do application.\n\n#### Request Body\n\n- No request body is required for this endpoint.\n    \n\n#### Response\n\nThe response for this request is a JSON object with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```\n\nThe response contains a \"message\" key which is a string indicating the status of the logout operation."
+					},
+					"response": [
+						{
+							"name": "User - Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "https://to-do-application-backend-development.onrender.com/user/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:17:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e37512c21c956-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-V9rW7eXSi+fbWW1efmHlOS+A738\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "ae0fa68f-c898-4bbc"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged out successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "To-Do's APIs",
+			"item": [
+				{
+					"name": "To-Do - Create ToDo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"D Mart\",\n  \"description\": \"pant , tshirt , soup, milk\",\n  \"dueDate\": \"2024-11-24\",// ISO Date format\n  \"priority\": \"medium\",\n  \"category\": \"shopping\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/todo/create",
+						"description": "### Create a New To-Do Item\n\nThis endpoint allows you to create a new to-do item.\n\n#### Request Body\n\n- title (text, required): The title of the to-do item.\n    \n- description (text, required): The detailed description of the to-do item.\n    \n- dueDate (text, required): The due date for the to-do item in ISO Date format.\n    \n- priority (text, required): The priority level of the to-do item.\n    \n- category (text, required): The category of the to-do item.\n    \n\n#### Response\n\nUpon successful creation, the response will have a status code of 201 and a JSON object containing the message and details of the created to-do item, including its title, description, due date, priority, status, category, user, and other metadata.\n\nExample Response:\n\n``` json\n{\n  \"message\": \"\",\n  \"todo\": {\n    \"title\": \"\",\n    \"description\": \"\",\n    \"dueDate\": \"\",\n    \"priority\": \"\",\n    \"status\": \"\",\n    \"category\": \"\",\n    \"user\": \"\",\n    \"isDeleted\": true,\n    \"_id\": \"\",\n    \"createdAt\": \"\",\n    \"updatedAt\": \"\",\n    \"__v\": 0\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "To-Do - Create ToDo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"D Mart\",\n  \"description\": \"pant , tshirt , soup, milk\",\n  \"dueDate\": \"2024-11-24\",// ISO 8601 format\n  \"priority\": \"medium\",\n  \"category\": \"shopping\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/todo/create"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:23:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e3f149d9d056f-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17a-+RUk/vU1Ng5wa5owu3pzPJcMtm4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "2c30bbb5-f158-4a2a"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"To-Do created successfully\",\n    \"todo\": {\n        \"title\": \"D Mart\",\n        \"description\": \"pant , tshirt , soup, milk\",\n        \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n        \"priority\": \"medium\",\n        \"status\": \"pending\",\n        \"category\": \"shopping\",\n        \"user\": \"673eba931251f465387a5e16\",\n        \"isDeleted\": false,\n        \"_id\": \"673ec3c11251f465387a5e2e\",\n        \"createdAt\": \"2024-11-21T05:23:13.049Z\",\n        \"updatedAt\": \"2024-11-21T05:23:13.049Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "To-Do - Get ToDos with Fiterations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://to-do-application-backend-development.onrender.com/todo/get/filter?status=pending&priority=medium&dueDate=2024-11-24",
+							"protocol": "https",
+							"host": [
+								"to-do-application-backend-development",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"todo",
+								"get",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending"
+								},
+								{
+									"key": "priority",
+									"value": "medium"
+								},
+								{
+									"key": "dueDate",
+									"value": "2024-11-24"
+								},
+								{
+									"key": "limit",
+									"value": "7",
+									"disabled": true
+								}
+							]
+						},
+						"description": "# To-Do Application Backend Development API\n\nThis API endpoint makes an HTTP GET request to retrieve filtered to-do items based on status, priority, and due date.\n\n### Request Parameters\n\n- `status` (string, required): The status of the to-do items. Possible values: \"pending\", \"completed\".\n    \n- `priority` (string, required): The priority level of the to-do items. Possible values: \"low\", \"medium\", \"high\".\n    \n- `dueDate` (string, required): The due date of the to-do items in the format \"YYYY-MM-DD\".\n    \n\n### Response\n\nThe API returns a JSON object with the following structure:\n\n- `total` (number): The total number of filtered to-do items.\n    \n- `todos` (array): An array of to-do items matching the filter criteria, each containing the following fields:\n    \n    - `_id` (string): The unique identifier of the to-do item.\n        \n    - `title` (string): The title of the to-do item.\n        \n    - `description` (string): The description of the to-do item.\n        \n    - `dueDate` (string): The due date of the to-do item.\n        \n    - `priority` (string): The priority level of the to-do item.\n        \n    - `status` (string): The status of the to-do item.\n        \n    - `category` (string): The category of the to-do item.\n        \n    - `user` (string): The user associated with the to-do item.\n        \n    - `isDeleted` (boolean): Indicates whether the to-do item is deleted.\n        \n    - `createdAt` (string): The creation timestamp of the to-do item.\n        \n    - `updatedAt` (string): The last update timestamp of the to-do item.\n        \n    - `__v` (number): Version key for optimistic concurrency control.\n        \n\nExample Response:\n\n``` json\n{\n  \"total\": 0,\n  \"todos\": [\n    {\n      \"_id\": \"\",\n      \"title\": \"\",\n      \"description\": \"\",\n      \"dueDate\": \"\",\n      \"priority\": \"\",\n      \"status\": \"\",\n      \"category\": \"\",\n      \"user\": \"\",\n      \"isDeleted\": true,\n      \"createdAt\": \"\",\n      \"updatedAt\": \"\",\n      \"__v\": 0\n    }\n  ]\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "To-Do - Get ToDos with Fiterations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://to-do-application-backend-development.onrender.com/todo/get/filter?status=pending&priority=medium&dueDate=2024-11-24",
+									"protocol": "https",
+									"host": [
+										"to-do-application-backend-development",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"todo",
+										"get",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										},
+										{
+											"key": "priority",
+											"value": "medium"
+										},
+										{
+											"key": "dueDate",
+											"value": "2024-11-24"
+										},
+										{
+											"key": "limit",
+											"value": "7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:28:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e46247cd0d6fc-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ab-RV81UIVWH1l9snzQFvdrLdavk2w\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "b0324e9f-db84-432e"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"todos\": [\n        {\n            \"_id\": \"673ec3c11251f465387a5e2e\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"shopping\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:23:13.049Z\",\n            \"updatedAt\": \"2024-11-21T05:23:13.049Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"673ec4231251f465387a5e31\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"shopping\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:24:51.021Z\",\n            \"updatedAt\": \"2024-11-21T05:24:51.021Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ToDo - Update ToDo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Buy groceries from store\",\n \"description\": \"Milk, bread, vegetables, fruits, chocolate\",\n \"status\":\"completed\",\n\"priority\":\"medium\",\n\"category\": \"shopping\",\n\"dueDate\":\"2024-11-25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/todo/update/673ddd61fb2a2a88b9e76888",
+						"description": "# Update Todo\n\nThis endpoint allows the client to update a specific to-do item.\n\n## Request\n\n### HTTP Method\n\nPUT\n\n### URL\n\n[https://to-do-application-backend-development.onrender.com/todo/update/673ddd61fb2a2a88b9e76888](https://to-do-application-backend-development.onrender.com/todo/update/673ddd61fb2a2a88b9e76888)\n\n### Headers\n\n- Content-Type: application/json\n    \n\n### Request Body\n\n- title (string): The title of the to-do item.\n    \n- description (string): The description of the to-do item.\n    \n- status (string): The status of the to-do item (e.g. completed, pending, in-progress).\n    \n- priority (string): The priority level of the to-do item (e.g. high, medium, low).\n    \n- category (string): The category of the to-do item.\n    \n- dueDate (string): The due date for the to-do item.\n    \n\nExample:\n\n``` json\n{\n  \"title\": \"Buy groceries from store\",\n  \"description\": \"Milk, bread, vegetables, fruit ...\",\n  \"status\": \"completed\",\n  \"priority\": \"medium\",\n  \"category\": \"shopping\",\n  \"dueDate\": \"2024-11-25\"\n}\n## Response\n### Status\n200\n### Headers\n- Content-Type: application/json\n### Response Body\n```json\n{\n  \"message\": \"\",\n  \"todo\": {\n    \"_id\": \"\",\n    \"title\": \"\",\n    \"description\": \"\",\n    \"dueDate\": \"\",\n    \"priority\": \"\",\n    \"status\": \"\",\n    \"category\": \"\",\n    \"user\": \"\",\n    \"isDeleted\": true,\n    \"createdAt\": \"\",\n    \"updatedAt\": \"\",\n    \"__v\": 0\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "ToDo - Update ToDo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Buy groceries from store\",\n \"description\": \"Milk, bread, vegetables, fruits, chocolate\",\n \"status\":\"completed\",\n\"priority\":\"medium\",\n\"category\": \"shopping\",\n\"dueDate\":\"2024-11-25\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/todo/update/673ddd61fb2a2a88b9e76888"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:36:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e529f6b79d6e5-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-gZ+aptv7GSxuF1Qhgm0/33wo5WM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "2e0aa687-dde8-4a59"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"To-Do updated successfully\",\n    \"todo\": {\n        \"_id\": \"673ddd61fb2a2a88b9e76888\",\n        \"title\": \"Buy groceries from store\",\n        \"description\": \"Milk, bread, vegetables, fruits, chocolate\",\n        \"dueDate\": \"2024-11-25T00:00:00.000Z\",\n        \"priority\": \"medium\",\n        \"status\": \"completed\",\n        \"category\": \"shopping\",\n        \"user\": \"673dbf65ddca7059fe955711\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2024-11-20T13:00:17.280Z\",\n        \"updatedAt\": \"2024-11-21T05:36:33.483Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "To-Do - Permanently Delete ToDos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://to-do-application-backend-development.onrender.com/todo/delete/673ec8da1251f465387a5e4d",
+						"description": "### DELETE /todo/delete/{id}\n\nThis endpoint is used to delete a specific to-do item.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Path Parameters\n\n- `id` (string, required): The unique identifier of the to-do item to be deleted.\n    \n\n#### Response\n\nThe response will be a JSON object with the following schema:\n\n``` json\n{\n    \"message\": \"\"\n}\n\n ```\n\n- `message` (string): A message indicating the result of the delete operation."
+					},
+					"response": [
+						{
+							"name": "To-Do - Permanently Delete ToDos",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "https://to-do-application-backend-development.onrender.com/todo/delete/673ec8da1251f465387a5e4d"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:45:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e6025a9733af0-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-KEn9jQDimCio7HSZoWvraClV7pA\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "8140dbd0-2efe-420c"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"To-Do deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "To-Do - Assign Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\":\"Grocery\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://to-do-application-backend-development.onrender.com/todo/category/673ec4231251f465387a5e31",
+						"description": "### Assign Or Update Todo Category\n\nThe endpoint allows updating the category of a specific todo item.\n\n#### Request\n\n- Method: PATCH\n    \n- URL: `https://to-do-application-backend-development.onrender.com/todo/category/673ec4231251f465387a5e31`\n    \n- { \"category\": \"Grocery\"}\n    \n\n#### Response\n\nThe response is in JSON format and follows the schema below:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"todo\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"_id\": {\n          \"type\": \"string\"\n        },\n        \"title\": {\n          \"type\": \"string\"\n        },\n        \"description\": {\n          \"type\": \"string\"\n        },\n        \"dueDate\": {\n          \"type\": \"string\"\n        },\n        \"priority\": {\n          \"type\": \"string\"\n        },\n        \"status\": {\n          \"type\": \"string\"\n        },\n        \"category\": {\n          \"type\": \"string\"\n        },\n        \"user\": {\n          \"type\": \"string\"\n        },\n        \"isDeleted\": {\n          \"type\": \"boolean\"\n        },\n        \"createdAt\": {\n          \"type\": \"string\"\n        },\n        \"updatedAt\": {\n          \"type\": \"string\"\n        },\n        \"__v\": {\n          \"type\": \"integer\"\n        }\n      }\n    }\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "To-Do - Assign Category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"category\":\"Grocery\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://to-do-application-backend-development.onrender.com/todo/category/673ec4231251f465387a5e31"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:50:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e66852c8e05be-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17d-PtLoS5Cu/AGN7dEMCcfzBOGfknI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "b32c5aed-98a6-48ca"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Category assigned successfully\",\n    \"todo\": {\n        \"_id\": \"673ec4231251f465387a5e31\",\n        \"title\": \"D Mart\",\n        \"description\": \"pant , tshirt , soup, milk\",\n        \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n        \"priority\": \"medium\",\n        \"status\": \"pending\",\n        \"category\": \"Grocery\",\n        \"user\": \"673eba931251f465387a5e16\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2024-11-21T05:24:51.021Z\",\n        \"updatedAt\": \"2024-11-21T05:50:08.496Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "To-Do -Get Due Date Reminders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://to-do-application-backend-development.onrender.com/todo/reminders",
+						"description": "### Get To-Do Reminders\n\nThis endpoint retrieves a list of to-do reminders expires within the next 3 days from the current date.  \n  \n\n**Request Body**  \nThis is a GET request and does not require a request body.\n\n**Response**\n\n- `total` (number): The total number of to-do reminders.\n    \n- `todos` (array): An array of to-do reminder objects, each containing the following properties:\n    \n    - `_id` (string): The unique identifier of the to-do reminder.\n        \n    - `title` (string): The title of the to-do reminder.\n        \n    - `description` (string): The description of the to-do reminder.\n        \n    - `dueDate` (string): The due date of the to-do reminder.\n        \n    - `priority` (string): The priority of the to-do reminder.\n        \n    - `status` (string): The status of the to-do reminder.\n        \n    - `category` (string): The category of the to-do reminder.\n        \n    - `user` (string): The user associated with the to-do reminder.\n        \n    - `isDeleted` (boolean): Indicates if the to-do reminder is deleted.\n        \n    - `createdAt` (string): The creation date of the to-do reminder.\n        \n    - `updatedAt` (string): The last update date of the to-do reminder.\n        \n    - `__v` (number): Version key for optimistic concurrency control.\n        \n\nExample Response:\n\n``` json\n{\n    \"total\": 0,\n    \"todos\": [\n        {\n            \"_id\": \"\",\n            \"title\": \"\",\n            \"description\": \"\",\n            \"dueDate\": \"\",\n            \"priority\": \"\",\n            \"status\": \"\",\n            \"category\": \"\",\n            \"user\": \"\",\n            \"isDeleted\": true,\n            \"createdAt\": \"\",\n            \"updatedAt\": \"\",\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "To-Do -Get Due Date Reminders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "https://to-do-application-backend-development.onrender.com/todo/reminders"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:52:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e6aa5d82a2064-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2aa-Z/9Q4d0OCgY6EZea5sOtiAWZQfg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "d569a21f-205f-4fb8"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"todos\": [\n        {\n            \"_id\": \"673ec3c11251f465387a5e2e\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"shopping\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:23:13.049Z\",\n            \"updatedAt\": \"2024-11-21T05:23:13.049Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"673ec4231251f465387a5e31\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"Grocery\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:24:51.021Z\",\n            \"updatedAt\": \"2024-11-21T05:50:08.496Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "To-Do - Search keyword Functionality",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjY3M2ViYTkzMTI1MWY0NjUzODdhNWUxNiIsImlhdCI6MTczMjE2NjQ3MCwiZXhwIjoxNzMyMTcwMDcwfQ.Cy7iAut7meseCfXoHvOjIkXRvGlf3TKdWSTM3PGgL5o"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://to-do-application-backend-development.onrender.com/todo/search/keyword?keyword=milk",
+							"protocol": "https",
+							"host": [
+								"to-do-application-backend-development",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"todo",
+								"search",
+								"keyword"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "milk"
+								}
+							]
+						},
+						"description": "### Get To-Do Items by Keyword\n\nThis endpoint retrieves to-do items based on the provided keyword.\n\n#### Request\n\n- Method: GET\n    \n- URL: `https://to-do-application-backend-development.onrender.com/todo/search/keyword`\n    \n- Query Parameters:\n    \n    - keyword (string, required): The keyword to search for in the to-do items.\"Keyword\" is the key or default variable and value can be search value user want to insert.\n        \n\n#### Response\n\n- Status: 200 OK\n    \n- Content-Type: application/json\n    \n\nExample Response Body:\n\n``` json\n{\n    \"total\": 0,\n    \"todos\": [\n        {\n            \"_id\": \"\",\n            \"title\": \"\",\n            \"description\": \"\",\n            \"dueDate\": \"\",\n            \"priority\": \"\",\n            \"status\": \"\",\n            \"category\": \"\",\n            \"user\": \"\",\n            \"isDeleted\": true,\n            \"createdAt\": \"\",\n            \"updatedAt\": \"\",\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "To-Do - Search keyword Functionality",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://to-do-application-backend-development.onrender.com/todo/search/keyword?keyword=milk",
+									"protocol": "https",
+									"host": [
+										"to-do-application-backend-development",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"todo",
+										"search",
+										"keyword"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "milk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Nov 2024 05:55:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8e5e6f046e4f396a-IAD"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2aa-Z/9Q4d0OCgY6EZea5sOtiAWZQfg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "6ad55818-0676-4de1"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 2,\n    \"todos\": [\n        {\n            \"_id\": \"673ec3c11251f465387a5e2e\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"shopping\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:23:13.049Z\",\n            \"updatedAt\": \"2024-11-21T05:23:13.049Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"673ec4231251f465387a5e31\",\n            \"title\": \"D Mart\",\n            \"description\": \"pant , tshirt , soup, milk\",\n            \"dueDate\": \"2024-11-24T00:00:00.000Z\",\n            \"priority\": \"medium\",\n            \"status\": \"pending\",\n            \"category\": \"Grocery\",\n            \"user\": \"673eba931251f465387a5e16\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2024-11-21T05:24:51.021Z\",\n            \"updatedAt\": \"2024-11-21T05:50:08.496Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

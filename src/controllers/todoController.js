@@ -54,7 +54,7 @@ exports.updateTodo = async (req, res) => {
     const { id } = req.params
     const updates = req.body
     const todo = await todoModel.findByIdAndUpdate({ _id: id, user: req.userId, isDeleted: false }, updates, { new: true })
-    if (!todo) return res.status(404).json({ error: 'To-Do not found' })
+    if (!todo) return res.status(404).json({ error: 'To-Do not found in Users List' })
     return res.status(200).json({ message: 'To-Do updated successfully', todo })
   }
   catch (error) {
